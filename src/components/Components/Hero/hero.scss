@@ -1,0 +1,23 @@
+.hero {
+  background-color: $black;
+
+  &__img {
+    width: 100%;
+    // height: calc(100vh - 56px);
+    height: 300px;
+    opacity: 0.6;
+    background-color: $black;
+  }
+
+  &__texts {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 1rem;
+
+    h1 {
+      width: 80%;
+    }
+  }
+}

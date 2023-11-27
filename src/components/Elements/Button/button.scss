@@ -1,0 +1,78 @@
+@import "/src/styles/utilities/variables";
+
+.elv-button {
+  .button {
+    height: max-content;
+    box-sizing: border-box !important;
+    border-radius: 10px;
+    padding: 8px 20px;
+
+    .button-content {
+      gap: 6px;
+    }
+  }
+
+  .is-unstyled {
+    background-color: transparent;
+    border-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+      border-color: transparent;
+      color: $dark;
+    }
+
+    &:active {
+      color: $dark;
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    &:focus {
+      border-color: transparent;
+    }
+
+    &:focus:not(:active) {
+      box-shadow: none;
+    }
+  }
+
+  .is-linked {
+    background: none;
+    border: 0px;
+    border-color: transparent;
+    color: $link;
+
+    .button-content {
+      border-bottom: 1px solid transparent;
+    }
+
+    &:hover {
+      .button-content {
+        border-bottom-color: 1px solid $link;
+      }
+    }
+
+    &:focus {
+      border: none;
+      color: $link;
+    }
+  }
+
+  .is-only-icon {
+    padding: 5px 6px !important;
+
+    &:hover {
+      border-color: transparent;
+    }
+
+    &:active {
+      border-color: transparent;
+    }
+
+    &:focus {
+      border-color: transparent;
+      box-shadow: none;
+    }
+  }
+}

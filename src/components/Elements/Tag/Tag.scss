@@ -1,0 +1,18 @@
+@import "/src/styles/utilities/variables";
+
+.elv-tag {
+  .tag:not(body).is-delete:hover {
+    color: $black;
+  }
+
+  .tag {
+    &.is-delete {
+      cursor: pointer;
+    }
+
+    .delete {
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+  }
+}

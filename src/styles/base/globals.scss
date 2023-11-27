@@ -1,0 +1,27 @@
+:root {
+  // TEXT
+  font-family: $family-primary;
+  word-break: break-word;
+  background-color: #7dc62b !important;
+  padding-top: 56px;
+
+  input {
+    font-family: $family-primary;
+  }
+
+  img {
+    object-fit: cover !important;
+  }
+
+  .page-container {
+    max-width: 600px;
+  }
+
+  .page {
+    padding-bottom: 200px;
+
+    &__form {
+      padding-top: 100px;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+// FONT =============================================
+.has-text-weight-extrabold {
+  font-weight: 900;
+}
+
+.has-line-height-150 {
+  line-height: 150%;
+}
+
+.has-border-bottom-grey-lighter {
+  border-bottom: 1px solid $grey-lighter;
+}
+
+.is-size-18px {
+  font-size: 18px !important;
+}
+
+.is-size-14px {
+  font-size: 14px !important;
+}
+
+.is-size-10px {
+  font-size: 10px !important;
+}
+
+// DIV =============================================
+.is-border-box {
+  box-sizing: border-box !important;
+}
+
+.is-absolute {
+  position: absolute !important;
+}
+
+.is-fullw {
+  width: 100%;
+}
+
+.is-fullh {
+  height: 100%;
+}
+
+.has-minw-maxcontent {
+  min-width: max-content;
+}
+
+// FLEX =============================================
+.is-gap-6 {
+  gap: 48px !important;
+}
+
+.is-gap-5 {
+  gap: 24px !important;
+}
+
+.is-gap-4 {
+  gap: 16px !important;
+}
+
+.is-gap-3 {
+  gap: 12px !important;
+}
+
+.is-gap-2 {
+  gap: 8px !important;
+}
+
+.is-gap-1 {
+  gap: 4px !important;
+}

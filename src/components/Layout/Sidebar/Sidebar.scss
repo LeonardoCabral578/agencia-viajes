@@ -1,0 +1,52 @@
+@import "/src/styles/utilities/variables";
+
+.elv-sidebar {
+  .sidebar-container {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    display: block;
+    z-index: 3000;
+
+    &--left {
+      left: -40%;
+      transition: left 0.3s ease-in-out;
+      border-radius: 0px 16px 16px 0px;
+
+      @media screen and (max-width: $tablet) {
+        left: -80%;
+        width: 80%;
+      }
+
+      &.is-open {
+        left: 0;
+      }
+    }
+
+    &--right {
+      right: -40%;
+      transition: right 0.3s ease-in-out;
+      border-radius: 16px 0px 0px 16px;
+
+      @media screen and (max-width: $tablet) {
+        right: -80%;
+        width: 80%;
+      }
+
+      &.is-open {
+        right: 0;
+      }
+    }
+
+    &__header {
+      gap: 10px;
+      border-bottom: 1px solid $grey;
+    }
+
+    &__content {
+      height: 100%;
+    }
+  }
+}

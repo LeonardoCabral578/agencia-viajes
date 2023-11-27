@@ -1,0 +1,30 @@
+@import "/src/styles/utilities/variables";
+
+.elv-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .fa_icon {
+    position: relative;
+  }
+}
+
+.icon-tag {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+
+  span {
+    padding: 0rem 0.4rem 0rem 0.35rem !important;
+    height: 1.15rem !important;
+    background-color: $grey-lighter !important;
+    color: $grey !important;
+  }
+}
+
+.svg_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

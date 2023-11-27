@@ -1,0 +1,15 @@
+@import "/src/styles/utilities/variables";
+
+.elv-radio {
+  .e-radio {
+    &__checkmark {
+      border-radius: 50%;
+
+      &:after {
+        width: 75%;
+        height: 75%;
+        border-radius: 50%;
+      }
+    }
+  }
+}

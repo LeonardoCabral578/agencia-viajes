@@ -1,0 +1,58 @@
+@import "./_initial-variables";
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+// ============================== FONTS ==============================
+$family-primary: "Quicksand", sans-serif;
+$family-secondary: "Lato", sans-serif;
+
+// ============================== FONTS ==============================
+$shadow: 0px 8px 16px -2px rgba(0, 0, 0, 0.1),
+  0px 0px 0px 1px rgba(0, 0, 0, 0.02);
+
+// ============================== COLORS ==============================
+// PRIMARY ==========================
+$primary: #6964cb;
+// $primary-light: #e3dffc;
+$primary-hover: #5b56be;
+$primary-active: #4c47ac;
+$primary-dark: #3e3997;
+
+// LINK =============================
+$link: #3273dc;
+$link-light: #eef3fc;
+$link-hover: #326fd2;
+$link-active: #3069c5;
+$link-dark: #234e95;
+
+// INFO =============================
+$info: #209cee;
+$info-light: #ecf7fe;
+$info-hover: #1f96e4;
+$info-active: #1e8cd4;
+$info-dark: #044977;
+
+// INFO =============================
+$success: #68da90;
+$success-light: #eefcf3;
+$success-hover: #5fd086;
+$success-active: #55c37b;
+$success-dark: #208a45;
+
+// WARNING =============================
+$warning: #ffe681;
+$warning-light: #fffbeb;
+$warning-hover: #ffe167;
+$warning-active: #ffd943;
+$warning-dark: #be9d19;
+
+// DANGER =============================
+$danger: #ff7a95;
+$danger-light: #ffebef;
+$danger-hover: #ff5e7e;
+$danger-active: #ff4168;
+$danger-dark: #b12945;
+
+// DARK =============================
+$black: hsl(0, 0%, 4%);
+$dark: hsl(0, 0%, 21%);
+$gray-dark: hsl(0, 0%, 29%);

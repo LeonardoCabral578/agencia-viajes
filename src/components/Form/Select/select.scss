@@ -1,0 +1,30 @@
+@import "/src/styles/utilities/variables";
+.elv-select {
+  .dropdown {
+    min-width: 160px;
+
+    .dropdown__list {
+      top: 100%;
+      max-height: 160px;
+      overflow: scroll;
+
+      &--over-list {
+        width: 115%;
+      }
+
+      .option {
+        &:hover {
+          background-color: $white-ter;
+        }
+
+        &--active {
+          background-color: $white-ter;
+
+          .dropdown-item {
+            color: $black !important;
+          }
+        }
+      }
+    }
+  }
+}

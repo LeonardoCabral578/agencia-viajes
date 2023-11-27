@@ -1,0 +1,37 @@
+.datePickerForm {
+  .helper-padding {
+    padding-bottom: 25px;
+  }
+
+  .helper-text-50 {
+    width: 50%;
+  }
+
+  &__input {
+    position: relative;
+
+    .down-icon {
+      right: 24px;
+      pointer-events: none;
+    }
+  }
+
+  .react-datepicker-wrapper {
+    width: 100%;
+
+    input {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid $grey-light;
+      padding: 20px 24px;
+    }
+
+    .react-datepicker-popper {
+      transform: translate(-50%);
+    }
+  }
+
+  .react-datepicker {
+    overflow: hidden !important;
+  }
+}

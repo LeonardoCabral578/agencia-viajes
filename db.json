@@ -1,0 +1,336 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "dni": 11223344,
+      "nombreCompleto": "Leo Cabral",
+      "correo": "leo@mail.com",
+      "fechaNacimientoSolicitante": "1998-01-10",
+      "contraseña": "1234",
+      "telefono": 123456789,
+      "RolesUsuarios": {
+        "tipo_rol": "Padres"
+      }
+    },
+    {
+      "id": 2,
+      "dni": 11223344,
+      "nombreCompleto": "Juan Viloni",
+      "correo": "juan@mail.com",
+      "fechaNacimientoSolicitante": "1998-01-10",
+      "contraseña": "1234",
+      "telefono": 123456789,
+      "RolesUsuarios": {
+        "tipo_rol": "Alumnos"
+      }
+    },
+    {
+      "id": 3,
+      "dni": 11223344,
+      "nombreCompleto": "Pedro Buenavida",
+      "correo": "pedro@mail.com",
+      "fechaNacimientoSolicitante": "1998-01-10",
+      "contraseña": "1234",
+      "telefono": 123456789,
+      "RolesUsuarios": {
+        "tipo_rol": "Alumnos"
+      }
+    },
+    {
+      "dni": 12345678,
+      "nombreCompleto": "Leonardo Cabral",
+      "correo": "leo2@mail.com",
+      "fechaNacimientoSolicitante": "2023-08-29T19:06:42.000Z",
+      "telefono": 3624123456,
+      "contraseña": "Leocabral1710!",
+      "RolesUsuarios": {
+        "tipo_rol": "Padres"
+      },
+      "id": 4
+    }
+  ],
+  "noticias": [
+    {
+      "id": 0,
+      "titulo": "EDUCAR PARA TRANSFORMAR Lanza Programa de Becas para Estudiantes Destacados",
+      "parrafos": "Resistencia, Chaco, Argentina - En un acto de compromiso con la excelencia educativa y el fomento del potencial de los jóvenes talentosos de la región, la prestigiosa academia EDUCAR PARA TRANSFORMAR ha anunciado la creación de un programa de becas revolucionario. Este programa tiene como objetivo principal identificar, apoyar y nutrir a los estudiantes sobresalientes que buscan destacarse en sus estudios.(sep)El programa de becas EDUCAR PARA TRANSFORMAR es un testimonio del compromiso continuo de la academia con la promoción de la educación de alta calidad y el acceso igualitario a oportunidades educativas de élite. La iniciativa está diseñada para eliminar las barreras económicas que a menudo limitan el acceso a una educación superior, al tiempo que recompensa a los estudiantes que demuestran un desempeño excepcional en sus estudios.(sep)Esta iniciativa representa un hito significativo en la misión de EDUCAR PARA TRANSFORMAR de catalizar cambios positivos en la educación y, en última instancia, en la sociedad. Al alentar y respaldar a estudiantes destacados, la academia está sentando las bases para una generación futura de líderes y profesionales altamente capacitados.",
+      "imagenes": "https://i.imgur.com/O6BVSNk.jpg(sep)https://i.imgur.com/hZwLqdW.jpg(sep)https://i.imgur.com/ealcQyh.jpg",
+      "redactor": "Edgardo Buenavida",
+      "id_usuario": "55667788",
+      "fecha": "2023/09/07"
+    },
+    {
+      "id": 1,
+      "titulo": "Investigadores de EDUCAR PARA TRANSFORMAR Publican Estudio Sobre Innovación Educativa",
+      "parrafos": "Resistencia, Chaco, Argentina - Un equipo de investigadores de renombre de la academia EDUCAR PARA TRANSFORMAR ha dado un paso audaz hacia el futuro de la educación al publicar un estudio pionero sobre enfoques innovadores en la enseñanza y el aprendizaje. Este estudio de vanguardia se ha convertido rápidamente en un faro de inspiración para educadores y líderes educativos en todo el país.(sep)El estudio, resultado de años de investigación interdisciplinaria, explora a fondo las tecnologías emergentes, las metodologías pedagógicas avanzadas y las mejores prácticas en la educación. Proporciona una hoja de ruta valiosa para la transformación de las aulas y destaca la importancia de adaptar el proceso educativo a la era digital.(sep)Los hallazgos de esta investigación no solo tienen el potencial de revolucionar la forma en que los estudiantes adquieren conocimientos, sino que también están destinados a influir en las políticas educativas a nivel nacional. Este logro destaca la importancia de EDUCAR PARA TRANSFORMAR como un centro de excelencia en la investigación educativa.",
+      "imagenes": "https://i.imgur.com/MDkpKWq.jpg(sep)https://i.imgur.com/V3ipt8x.jpg(sep)https://i.imgur.com/VQt3Pbz.jpg",
+      "redactor": "Juana Venetti",
+      "id_usuario": "55667788",
+      "fecha": "2023/08/27"
+    },
+    {
+      "id": 2,
+      "titulo": "EDUCAR PARA TRANSFORMAR Colabora en Proyecto de Educación Ambiental",
+      "parrafos": "Resistencia, Chaco, Argentina - En un esfuerzo por abordar y contrarrestar los desafíos ambientales en la región, la academia EDUCAR PARA TRANSFORMAR se ha unido con entusiasmo a varias organizaciones locales en un ambicioso proyecto de educación ambiental. Este proyecto de alcance comunitario tiene como objetivo principal fomentar la conciencia ambiental y la acción responsable entre estudiantes y la comunidad en general.(sep)Las actividades dentro de este proyecto incluyen talleres educativos interactivos, actividades de reforestación y campañas de sensibilización sobre la conservación del medio ambiente. Los estudiantes de EDUCAR PARA TRANSFORMAR han desempeñado un papel fundamental en la organización y ejecución de estas actividades, lo que refleja su compromiso con la responsabilidad social y el bienestar de la comunidad.(sep)Este proyecto ejemplifica el papel activo y constructivo que la academia está desempeñando en la construcción de una sociedad más sostenible y consciente del medio ambiente. Al impulsar la educación ambiental, EDUCAR PARA TRANSFORMAR se sitúa a la vanguardia de los esfuerzos para preservar el entorno natural para las generaciones futuras.",
+      "imagenes": "https://i.imgur.com/c6E2zch.png(sep)https://i.imgur.com/sLisOOX.jpg(sep)https://i.imgur.com/uyhM8K5.jpg",
+      "redactor": "Luciano Echeverría",
+      "id_usuario": "55667788",
+      "fecha": "2023/05/16"
+    },
+    {
+      "id": 3,
+      "titulo": "Alumnos de EDUCAR PARA TRANSFORMAR Ganan Competencia de Ciencias",
+      "parrafos": "Resistencia, Chaco, Argentina - La excelencia académica y la dedicación de los estudiantes de EDUCAR PARA TRANSFORMAR han alcanzado un nuevo pico al ganar el primer lugar en una prestigiosa competencia nacional de ciencias. El logro sobresaliente de estos jóvenes talentos es un testimonio del compromiso de la academia con la calidad educativa.(sep)Los estudiantes, respaldados por sus profesores y mentores, presentaron proyectos científicos innovadores que no solo destacaron en el evento, sino que también ofrecieron soluciones prácticas a desafíos científicos y tecnológicos actuales. Su éxito es un reflejo de la educación de alta calidad y la formación integral que reciben en EDUCAR PARA TRANSFORMAR.(sep)Estos jóvenes científicos están preparados para asumir desafíos aún mayores en el futuro y contribuir significativamente a la innovación y el avance científico en Argentina y más allá.",
+      "imagenes": "https://i.imgur.com/ajzuLZu.jpg(sep)https://i.imgur.com/l503GYj.jpg(sep)https://i.imgur.com/rxCjvCZ.jpg",
+      "redactor": "Sebastian Bogado",
+      "id_usuario": "55667788",
+      "fecha": "2023/02/11"
+    },
+    {
+      "id": 4,
+      "titulo": "Celebración del Aniversario de EDUCAR PARA TRANSFORMAR",
+      "parrafos": "Resistencia, Chaco, Argentina - Un hito monumental está en el horizonte mientras EDUCAR PARA TRANSFORMAR se prepara para celebrar su décimo aniversario. Durante esta década de compromiso y dedicación a la educación de calidad, la academia ha dejado una impresionante huella en la comunidad y ha forjado el camino para innumerables éxitos académicos y profesionales.(sep)La celebración del décimo aniversario de EDUCAR PARA TRANSFORMAR será una ocasión especial que incluirá una serie de eventos emocionantes. Desde conferencias magistrales a cargo de expertos en educación hasta la participación de destacados exalumnos que compartirán sus historias de éxito, la academia se prepara para una celebración que refleja su compromiso con la educación de excelencia.(sep)La comunidad académica y la sociedad en su conjunto celebrarán estos diez años de logros y mirarán hacia el futuro con entusiasmo, sabiendo que EDUCAR PARA TRANSFORMAR continuará marcando la diferencia en la educación y la formación de líderes del mañana.",
+      "imagenes": "https://i.imgur.com/4hQZJun.png(sep)https://i.imgur.com/42GmqRO.jpg(sep)https://i.imgur.com/vTEx4L1.jpg",
+      "redactor": "Octavio Medina",
+      "id_usuario": "55667788",
+      "fecha": "2023/01/02"
+    }
+  ],
+  "comentarios": [
+    {
+      "id": 0,
+      "noticiaId": 2,
+      "name": "David",
+      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "date": "2023/09/07"
+    },
+    {
+      "id": 1,
+      "noticiaId": 2,
+      "name": "Juan",
+      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "date": "2023/09/07"
+    },
+    {
+      "id": 3,
+      "noticiaId": 2,
+      "name": "Juan",
+      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "date": "2023/09/07"
+    },
+    {
+      "id": 4,
+      "noticiaId": 1,
+      "name": "Pedro",
+      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "date": "2023/09/07"
+    },
+    {
+      "id": 5,
+      "noticiaId": 1,
+      "name": "Leo",
+      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "date": "2023/09/07"
+    },
+    {
+      "id": 8,
+      "comment": "",
+      "date": "2023/09/07",
+      "name": "",
+      "noticiaId": "2"
+    },
+    {
+      "id": 6,
+      "comment": "",
+      "date": "2023/09/07",
+      "name": "Hola",
+      "noticiaId": "2"
+    },
+    {
+      "id": 9,
+      "comment": "Hola muy bueno",
+      "date": "2023/09/07",
+      "name": "Leo",
+      "noticiaId": "2"
+    },
+    {
+      "id": 10,
+      "comment": "Hola muy bueno",
+      "date": "2023/09/07",
+      "name": "Leo",
+      "noticiaId": "2"
+    },
+    {
+      "id": 11,
+      "comment": "Hola muy bueno",
+      "date": "2023/09/07",
+      "name": "Leo",
+      "noticiaId": "2"
+    },
+    {
+      "id": 12,
+      "comment": "Hola muy bueno",
+      "date": "2023/09/07",
+      "name": "Leo",
+      "noticiaId": "2"
+    },
+    {
+      "id": 13,
+      "comment": "Hola muy bueno",
+      "date": "2023/09/07",
+      "name": "Leo",
+      "noticiaId": "2"
+    },
+    {
+      "id": 14,
+      "comment": "Genial loco",
+      "date": "2023/09/07",
+      "name": "Leo",
+      "noticiaId": "2"
+    },
+    {
+      "id": 15,
+      "comment": "Que lindo todo",
+      "date": "2023/09/07",
+      "name": "Pepe",
+      "noticiaId": "2"
+    },
+    {
+      "id": 16,
+      "comment": "re bien",
+      "date": "2023/09/07",
+      "name": "Leo",
+      "noticiaId": "1"
+    },
+    {
+      "id": 17,
+      "comment": "muy bueno",
+      "date": "2023/09/07",
+      "name": "LEo",
+      "noticiaId": "0"
+    },
+    {
+      "id": 18,
+      "comment": "1231231asdasd",
+      "date": "2023/09/07",
+      "name": "Leo",
+      "noticiaId": "0"
+    },
+    {
+      "id": 19,
+      "comment": "Buenardo",
+      "date": "2023/09/07",
+      "name": "Leo",
+      "noticiaId": "0"
+    },
+    {
+      "id": 20,
+      "comment": "Malisimo",
+      "date": "2023/09/07",
+      "name": "Juan",
+      "noticiaId": "0"
+    },
+    {
+      "id": 21,
+      "comment": "hola",
+      "date": "2023/09/07",
+      "name": "Leo Cabral",
+      "noticiaId": "3"
+    },
+    {
+      "id": 22,
+      "comment": "hola",
+      "date": "2023/09/07",
+      "name": "Leo Cabral",
+      "noticiaId": "2"
+    },
+    {
+      "id": 23,
+      "comment": "excelente",
+      "date": "2023/09/07",
+      "name": "Leo Cabral",
+      "noticiaId": "0"
+    },
+    {
+      "id": 24,
+      "comment": "ola",
+      "date": "2023/09/07",
+      "name": "Leo Cabral",
+      "noticiaId": "0"
+    }
+  ],
+  "inscripciones": [
+    {
+      "id": 1,
+      "nombreCompletoSolicitante": "Matias Suarez",
+      "correoSolicitante": "luissuarez@hotmail.com",
+      "nivelEducativoSolicitante": "Inicial",
+      "fechaNacimientoSolicitante": "2018-03-12",
+      "id_usuario": "39439293"
+    },
+    {
+      "id": 2,
+      "nombreCompletoSolicitante": "Matias Suarez",
+      "correoSolicitante": "luissuarez@hotmail.com",
+      "nivelEducativoSolicitante": "Inicial",
+      "fechaNacimientoSolicitante": "2018-03-12",
+      "id_usuario": "39439293"
+    },
+    {
+      "id": 3,
+      "nombreCompletoSolicitante": "Matias Suarez",
+      "correoSolicitante": "luissuarez@hotmail.com",
+      "nivelEducativoSolicitante": "Inicial",
+      "fechaNacimientoSolicitante": "2018-03-12",
+      "id_usuario": "39439293"
+    },
+    {
+      "id": 4,
+      "nombreCompletoSolicitante": "Matias Suarez",
+      "correoSolicitante": "luissuarez@hotmail.com",
+      "nivelEducativoSolicitante": "Inicial",
+      "fechaNacimientoSolicitante": "2018-03-12",
+      "id_usuario": "39439293"
+    },
+    {
+      "id": 5,
+      "correoSolicitante": "leo@mail.com",
+      "id_usuario": "1",
+      "nombreCompletoSolicitante": "Leo Cabral",
+      "fechaNacimientoSolicitante": "2023-09-10T18:43:55.446Z",
+      "nivelEducativoSolicitante": "Medio"
+    },
+    {
+      "id": 6,
+      "correoSolicitante": "leo@mail.com",
+      "id_usuario": "1",
+      "nombreCompletoSolicitante": "Leo Cabral",
+      "fechaNacimientoSolicitante": "2023-09-10T18:45:00.805Z",
+      "nivelEducativoSolicitante": "Medio"
+    },
+    {
+      "id": 7,
+      "correoSolicitante": "leo@mail.com",
+      "id_usuario": "1",
+      "nombreCompletoSolicitante": "Leo Cabral",
+      "fechaNacimientoSolicitante": "2023-09-10T18:45:44.105Z",
+      "nivelEducativoSolicitante": "Avanzado"
+    },
+    {
+      "correoSolicitante": "leo@mail.com",
+      "id_usuario": 1,
+      "nombreCompletoSolicitante": "Leo Cabral",
+      "fechaNacimientoSolicitante": "2023-09-10T22:14:10.245Z",
+      "nivelEducativoSolicitante": "Medio",
+      "id": 8
+    },
+    {
+      "correoSolicitante": "prueba@prueba.com",
+      "id_usuario": "98123765",
+      "nombreCompletoSolicitante": "Prueba",
+      "fechaNacimientoSolicitante": "2023-09-11T02:04:21.787Z",
+      "nivelEducativoSolicitante": "Inicial",
+      "id": 9
+    }
+  ]
+}

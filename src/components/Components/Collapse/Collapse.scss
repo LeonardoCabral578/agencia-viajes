@@ -1,0 +1,33 @@
+@import "/src/styles/utilities/variables";
+
+.e-collapse {
+  overflow: hidden;
+
+  &__header {
+    cursor: pointer;
+
+    h3 {
+      font-weight: $weight-semibold;
+    }
+  }
+
+  &__content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+
+    &.open {
+      max-height: var(--max-height-coll);
+    }
+  }
+
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+
+  &.open {
+    .arrow {
+      transform: rotate(180deg);
+    }
+  }
+}

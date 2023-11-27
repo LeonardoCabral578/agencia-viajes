@@ -1,0 +1,60 @@
+@import "/src/styles/utilities/variables";
+
+.elv-search {
+  .search-container {
+    border-radius: 12px;
+    border: 1px solid $dark;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    min-width: 150px;
+
+    &__input {
+      width: 100%;
+      border: 0px;
+      padding: 12px 16px;
+      background-color: transparent;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: $dark;
+      }
+    }
+
+    &__button-search {
+      padding: 5px;
+
+      .button {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+
+    &--small {
+      input {
+        font-size: 12px;
+      }
+    }
+
+    &--normal {
+      input {
+        font-size: 16px;
+      }
+    }
+
+    &--medium {
+      input {
+        font-size: 20px;
+      }
+    }
+
+    &--large {
+      input {
+        font-size: 24px;
+      }
+    }
+  }
+}

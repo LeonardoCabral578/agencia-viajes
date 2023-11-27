@@ -1,0 +1,23 @@
+.register {
+}
+
+.reg-verify {
+  &__inputs {
+    .form {
+      gap: 16px;
+
+      .input-code {
+        max-width: 58px;
+        height: 80px;
+        border-radius: 16px;
+        border-color: white;
+        border: none;
+
+        &:focus-visible {
+          background-color: #a4d9ff; //TODO Cambiar a variable
+          outline: none;
+        }
+      }
+    }
+  }
+}
