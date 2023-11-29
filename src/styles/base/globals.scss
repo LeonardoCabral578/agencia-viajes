@@ -2,8 +2,8 @@
   // TEXT
   font-family: $family-primary;
   word-break: break-word;
-  background-color: #7dc62b !important;
-  padding-top: 56px;
+  // background-color: #7dc62b !important;
+  // padding-top: 56px;
 
   input {
     font-family: $family-primary;
@@ -13,15 +13,15 @@
     object-fit: cover !important;
   }
 
-  .page-container {
-    max-width: 600px;
-  }
+  // .page-container {
+  //   max-width: 600px;
+  // }
 
-  .page {
-    padding-bottom: 200px;
+  // .page {
+  //   padding-bottom: 200px;
 
-    &__form {
-      padding-top: 100px;
-    }
-  }
+  //   &__form {
+  //     padding-top: 100px;
+  //   }
+  // }
 }

@@ -7,6 +7,16 @@ import educar from "@/assets/img/educar.jpg";
 import { Providers } from "@/redux/providers";
 import { ToastContainer } from "react-toastify";
 import Footer from "@/components/Layout/Footer/Footer";
+import {
+  AppBar,
+  Box,
+  Button,
+  IconButton,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import ResponsiveAppBar from "./Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,30 +36,9 @@ export default function RootLayout({
     <html lang="es">
       <body className={inter.className}>
         <Providers>
-          <Navbar
-            links={[
-              { label: "Inicio", href: "/" },
-              { label: "Noticias", href: "/noticias" },
-              { label: "Empleo", href: "/empleo" },
-              { label: "Galeria", href: "/galeria" },
-              { label: "Inscripcion", href: "/inscripcion" },
-            ]}
-            logo={educar}
-            dropdown={{
-              label: "Más",
-              items: [
-                { label: "Quienes somos", href: "/quienes_somos" },
-                { label: "Niveles Educativos", href: "/niveles_educativos" },
-                {
-                  label: "Bienestar Estudiantil",
-                  href: "/bienestar_estudiantil",
-                },
-              ],
-            }}
-          />
+          <ResponsiveAppBar />
           <ToastContainer />
           {children}
-          <Footer />
         </Providers>
       </body>
     </html>

@@ -4,6 +4,7 @@ import educar from "@/render/assets/img/educar.jpg";
 import AnswerButton from "../../components/Form/AnswerButton/AnswerButton";
 import {
   verifyDNI,
+  verifyDireccion,
   verifyEmail,
   verifyName,
   verifyPassword,
@@ -28,7 +29,7 @@ import { generateRandomKey } from "@/utils/functions";
 import dayjs from "dayjs";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function Register() {
@@ -43,6 +44,9 @@ export default function Register() {
 
   const [nameInput, setNameInput] = useState("");
   const [nameError, setNameError] = useState("");
+
+  const [direccionInput, setDireccionInput] = useState("");
+  const [direccionError, setDireccionError] = useState("");
 
   const [telInput, setTelInput] = useState("");
   const [telError, setTelError] = useState("");
@@ -65,6 +69,7 @@ export default function Register() {
     const email = verifyEmail(emailInput);
     const pass = verifyPassword(passwordInput);
     const name = verifyName(nameInput);
+    const direc = verifyDireccion(direccionInput);
     const dni = verifyDNI(dniInput);
     const tel = verifyTel(telInput);
 
@@ -73,7 +78,8 @@ export default function Register() {
       name.status &&
       tel.status &&
       pass.status &&
-      dni.status
+      dni.status &&
+      direc.status
     ) {
       return true;
     } else {
@@ -82,6 +88,7 @@ export default function Register() {
       setTelError(tel.error);
       setPasswordError(pass.error);
       setNameError(name.error);
+      setDireccionError(direc.error);
       return false;
     }
   };
@@ -91,11 +98,12 @@ export default function Register() {
       dni: dniInput,
       nombreCompleto: nameInput,
       correo: emailInput,
-      fechaNacimientoSolicitante: birthDate.format("L"),
+      fechaNacimiento: birthDate.format("L"),
       telefono: telInput,
+      direccion: direccionInput,
       contraseña: passwordInput,
       rolesUsuarios: {
-        tipo_rol: rolInput,
+        tipo_rol: "Cliente",
       },
     };
     console.log(newUser);
@@ -128,7 +136,8 @@ export default function Register() {
             theme: "colored",
           });
         } else {
-          toast.error("Error del servidor", {
+          console.log(error);
+          toast.error("Error del servidor: " + error.data.title, {
             position: "top-center",
             autoClose: 3000,
             // hideProgressBar: true,
@@ -144,12 +153,12 @@ export default function Register() {
 
   return (
     <div className="page page__form register">
-      <div className="register__content container max-w-5xl mx-auto mt-24">
-        <div className="flex p-4 bg-white gap-4 rounded-xl shadow-md">
-          <div className="w-1/2 flex items-center justify-center">
-            {/* <Image className="logo-ypf" src={educar} alt="Logo YPF Gas" /> */}
-          </div>
-          <div className="w-1/2">
+      <div className="register__content container mx-auto m-8 max-w-[800px]">
+        <div className="flex p-8 gap-4 rounded-xl shadow-md bg-blue-100">
+          {/* <div className="w-1/2 flex items-center justify-center"> */}
+          {/* <Image className="logo-ypf" src={educar} alt="Logo YPF Gas" /> */}
+          {/* </div> */}
+          <div className="w-full">
             <div className="inputs mt-6 w-full">
               <h3 className="title is-4 text-center mt-2 mb-2">
                 Vamos a registrarte
@@ -215,6 +224,18 @@ export default function Register() {
                   }}
                 />
                 <TextField
+                  error={direccionError !== ""}
+                  helperText={direccionError !== "" ? direccionError : ""}
+                  className="w-full"
+                  label="Direccion"
+                  required
+                  variant="outlined"
+                  onChange={(e) => {
+                    setDireccionInput(e.target.value);
+                    setDireccionError("");
+                  }}
+                />
+                <TextField
                   error={dniError !== ""}
                   helperText={dniError !== "" ? dniError : ""}
                   className="w-full"
@@ -240,24 +261,6 @@ export default function Register() {
                     setTelError("");
                   }}
                 />
-                <div className="education-level">
-                  <TextField
-                    label="Rol:"
-                    select
-                    variant="outlined"
-                    required
-                    value={rolInput}
-                    onChange={(e) => setRolInput(e.target.value)}
-                    className="w-full"
-                  >
-                    <MenuItem value={"Alumno"} key={generateRandomKey()}>
-                      Alumno
-                    </MenuItem>
-                    <MenuItem value={"Padre"} key={generateRandomKey()}>
-                      Padre
-                    </MenuItem>
-                  </TextField>
-                </div>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DatePicker
                     defaultValue={birthDate}
@@ -270,7 +273,6 @@ export default function Register() {
               </div>
               <div className="mt-6">
                 <Button
-                  variant="contained"
                   className="w-full"
                   onClick={() => {
                     InputsVerify() && registerUser();

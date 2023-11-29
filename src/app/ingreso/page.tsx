@@ -17,7 +17,7 @@ import TextField from "@mui/material/TextField";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Button } from "@mui/material";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function Login() {
@@ -102,17 +102,17 @@ export default function Login() {
 
   return (
     <div className="page page__form login h-full">
-      <div className="login__content container max-w-4xl mx-auto mt-32">
-        <div className="flex flex-col sm:flex-row p-4 bg-white gap-4 rounded-xl shadow-md">
-          <div className="sm:w-1/2 flex items-center justify-center">
-            {/* <Image
+      <div className="login__content container max-w-[800px] mx-auto m-8">
+        <div className="flex flex-col sm:flex-row p-8 gap-4 rounded-xl shadow-md bg-blue-100">
+          {/* <div className="sm:w-1/2 flex items-center justify-center"> */}
+          {/* <Image
               className="logo"
               src={educar}
               alt="Logo EDUCAR"
               width={300}
             /> */}
-          </div>
-          <div className="sm:w-1/2">
+          {/* </div> */}
+          <div className="">
             <div className="inputs flex flex-col gap-6 mt-6 w-full">
               <h3 className="title is-4 text-center mt-2">
                 Te damos la bienvenida
@@ -156,7 +156,6 @@ export default function Login() {
                 />
               </FormControl>
               <Button
-                variant="contained"
                 className="mt-4"
                 onClick={() => {
                   InputsVerify() && router.push("/");

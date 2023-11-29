@@ -20,6 +20,14 @@ export const verifyName = (value: string) => {
   return { status: true, error: "" };
 };
 
+export const verifyDireccion = (value: string) => {
+  if (value == "") {
+    return { status: false, error: "Dirección requerida" };
+  }
+
+  return { status: true, error: "" };
+};
+
 export const verifyMonto = (value: string) => {
   if (value == "") {
     return { status: false, error: "Monto requerido" };

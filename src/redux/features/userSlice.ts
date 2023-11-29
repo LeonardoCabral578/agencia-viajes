@@ -11,8 +11,9 @@ let savedUserLogged = {
     dni: "0",
     nombreCompleto: "",
     correo: "",
-    fechaNacimientoSolicitante: "",
+    fechaNacimiento: "",
     telefono: "0",
+    direccion: "",
     rolesUsuarios: {
       tipo_rol: "",
     },
@@ -40,7 +41,8 @@ export const userSlice = createSlice({
       state.userSelected = {
         correo: action.payload.correo,
         dni: action.payload.dni,
-        fechaNacimientoSolicitante: action.payload.fechaNacimientoSolicitante,
+        fechaNacimiento: action.payload.fechaNacimiento,
+        direccion: action.payload.direccion,
         nombreCompleto: action.payload.nombreCompleto,
         rolesUsuarios: { tipo_rol: action.payload.rolesUsuarios.tipo_rol },
         telefono: action.payload.telefono,
@@ -52,8 +54,7 @@ export const userSlice = createSlice({
           userSelected: {
             correo: action.payload.correo,
             dni: action.payload.dni,
-            fechaNacimientoSolicitante:
-              action.payload.fechaNacimientoSolicitante,
+            fechaNacimiento: action.payload.fechaNacimiento,
             nombreCompleto: action.payload.nombreCompleto,
             RolesUsuarios: { tipo_rol: action.payload.rolesUsuarios.tipo_rol },
             telefono: action.payload.telefono,

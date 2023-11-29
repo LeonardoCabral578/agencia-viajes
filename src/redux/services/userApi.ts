@@ -6,8 +6,9 @@ export type TUserApi = {
   dni: string;
   nombreCompleto: string;
   correo: string;
-  fechaNacimientoSolicitante: string;
+  fechaNacimiento: string;
   telefono: string;
+  direccion: string;
   contraseña?: string;
   rolesUsuarios: {
     tipo_rol: string;
