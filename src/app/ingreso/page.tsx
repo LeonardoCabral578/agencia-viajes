@@ -103,7 +103,7 @@ export default function Login() {
   return (
     <div className="page page__form login h-full">
       <div className="login__content container max-w-[800px] mx-auto m-8">
-        <div className="flex flex-col sm:flex-row p-8 gap-4 rounded-xl shadow-md bg-blue-100">
+        <div className="flex flex-col p-8 gap-4 rounded-xl shadow-md bg-blue-100 w-full">
           {/* <div className="sm:w-1/2 flex items-center justify-center"> */}
           {/* <Image
               className="logo"

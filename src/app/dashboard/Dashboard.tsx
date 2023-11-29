@@ -31,12 +31,14 @@ export default function Dashboard({ activeTab, children }: any) {
         </button>
         <div
           className={[
-            "w-full bg-white sm:w-4/4 dashbord min-h-screen mt-24",
+            "w-full bg-white sm:w-4/4 dashbord min-h-screen",
             `${toggleSidebar ? " sm:ml-64" : ""}`,
           ].join("")}
         >
           <div className="flex flex-col gap-6 p-2 pb-6 overflow-hidden">
-            <div className="p-6">{children}</div>
+            <div className={`${!toggleSidebar ? " ml-20" : ""}`}>
+              {children}
+            </div>
           </div>
         </div>
       </main>

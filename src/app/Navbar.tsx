@@ -55,9 +55,9 @@ function ResponsiveAppBar() {
       },
     },
     {
-      label: "Unidades",
+      label: "Mis reservas",
       onclick: () => {
-        console.log("hola");
+        router.push("/mis-reservas");
       },
     },
   ];

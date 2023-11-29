@@ -23,7 +23,7 @@ const CardService = ({
   onClick,
 }: CardServiceProps) => {
   return (
-    <Box sx={{ minWidth: 275 }}>
+    <Box>
       <Card variant="outlined" className="bg-blue-100">
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
@@ -44,7 +44,7 @@ const CardService = ({
               onClick();
             }}
           >
-            Reservar
+            Ver más
           </Button>
         </CardActions>
       </Card>

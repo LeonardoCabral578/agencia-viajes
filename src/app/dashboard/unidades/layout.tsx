@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Servicios - ViajePlus",
-  description: "Servicios - ViajePlus",
+  title: "Unidades - ViajePlus",
+  description: "Unidades - ViajePlus",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

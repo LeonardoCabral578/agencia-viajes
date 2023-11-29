@@ -25,6 +25,12 @@ const Sidebar = ({ activeTab, setToggleSidebar }: any) => {
       onClick: () => {},
     },
     {
+      icon: <EqualizerIcon />,
+      label: "Unidades",
+      ref: "/dashboard/unidades",
+      onClick: () => {},
+    },
+    {
       icon: <LogoutIcon />,
       label: "Cerrar sesión",
       ref: "/login",

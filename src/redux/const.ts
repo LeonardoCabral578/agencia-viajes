@@ -19,10 +19,30 @@ export const unidadesEP = {
   getall: "UnidadTransporte",
   getById: "UnidadTransporte/",
   post: "UnidadTransporte/",
+  update: "UnidadTransporte/",
+  delete: "UnidadTransporte/",
 };
 
-export const inscripcionEP = {
-  getall: "SolicitudInscripcion",
-  getById: "SolicitudInscripcion/ObtenerSolicitudesPorId/",
-  post: "SolicitudInscripcion/AgregarSolicitud",
+export const itinerarioPuntoEP = {
+  getall: "Itinerario_PuntoIntermedio",
+  getById: "Itinerario_PuntoIntermedio/",
+  post: "Itinerario_PuntoIntermedio/",
+};
+
+export const puntoIntermedioEP = {
+  getall: "PuntoIntermedio",
+  getById: "PuntoIntermedio/",
+  post: "PuntoIntermedio/",
+};
+
+export const itinerarioEP = {
+  getall: "Itinerario",
+  getById: "Itinerario/",
+  post: "Itinerario/",
+};
+
+export const servicioUsuarioEP = {
+  getall: "Servicio_Usuario",
+  getById: "Servicio_Usuario/",
+  post: "Servicio_Usuario/agregar-servicio-usuario-y-reserva",
 };

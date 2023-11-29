@@ -27,18 +27,13 @@ import {
   randomArrayItem,
 } from "@mui/x-data-grid-generator";
 import { generateRandomKey } from "@/utils/functions";
-import {
-  useCreateServicioMutation,
-  useDeleteServicioMutation,
-  useGetServiciosQuery,
-  useUpdateServicioMutation,
-} from "@/redux/services/servicioApi";
 import { toast } from "react-toastify";
-
-const roles = ["Market", "Finance", "Development"];
-const randomRole = () => {
-  return randomArrayItem(roles);
-};
+import {
+  useCreateUnidadMutation,
+  useDeleteUnidadMutation,
+  useGetUnidadesQuery,
+  useUpdateUnidadMutation,
+} from "@/redux/services/unidadesApi";
 
 const initialRows: GridRowsProp = [];
 
@@ -70,7 +65,7 @@ function EditToolbar(props: EditToolbarProps) {
   );
 }
 
-export default function ServicioTable() {
+export default function UnidadTable() {
   const [rows, setRows] = React.useState(initialRows);
   const [rowModesModel, setRowModesModel] = React.useState<GridRowModesModel>(
     {}
@@ -96,7 +91,7 @@ export default function ServicioTable() {
   const handleDeleteClick = (id: GridRowId) => () => {
     setRows(rows.filter((row) => row.id !== id));
     const findedRow = rows.find((row) => row.id === id);
-    findedRow && deleteMutation(findedRow.id_servicio);
+    findedRow && deleteMutation(findedRow.id_unidad);
   };
 
   const handleCancelClick = (id: GridRowId) => () => {
@@ -111,11 +106,15 @@ export default function ServicioTable() {
     }
   };
 
-  const [updateModel] = useUpdateServicioMutation();
+  const [updateModel] = useUpdateUnidadMutation();
   const updateMutation = async (newRow: GridRowModel) => {
     await updateModel({
-      id_servicio: Number(newRow.id_servicio),
-      data: newRow,
+      id_unidadTransporte: Number(newRow.id_unidad),
+      data: {
+        tipo_unidad: newRow.tipo_unidad,
+        categoria: newRow.categoria,
+        asientos: newRow.asientos,
+      },
     })
       .unwrap()
       .then((payload) => {
@@ -144,10 +143,10 @@ export default function ServicioTable() {
       });
   };
 
-  const [deleteModel] = useDeleteServicioMutation();
+  const [deleteModel] = useDeleteUnidadMutation();
   const deleteMutation = async (id: GridRowId) => {
     await deleteModel({
-      id_servicio: Number(id),
+      id_unidadTransporte: Number(id),
     })
       .unwrap()
       .then((payload) => {
@@ -176,15 +175,9 @@ export default function ServicioTable() {
       });
   };
 
-  const [addNewModel] = useCreateServicioMutation();
+  const [addNewModel] = useCreateUnidadMutation();
   const addMutation = async (newRow: GridRowModel) => {
-    await addNewModel({
-      data: {
-        id_itinerario: newRow.id_itinerario,
-        id_unidadTransporte: newRow.id_unidadTransporte,
-        costo_predeterminado: newRow.costo_predeterminado,
-      },
-    })
+    await addNewModel({ data: newRow })
       .unwrap()
       .then((payload) => {
         toast.success("Registro agregado exitosamente", {
@@ -222,7 +215,7 @@ export default function ServicioTable() {
 
     updateMutation(newRow);
     addMutation(newRow);
-    servicio_refetch();
+    unidad_refetch();
 
     return updatedRow;
   };
@@ -232,59 +225,51 @@ export default function ServicioTable() {
   };
 
   const {
-    data: servicio_data,
-    isError: servicio_isError,
-    error: servicio_error,
-    isLoading: servicio_isLoading,
-    isFetching: servicio_isFetching,
-    refetch: servicio_refetch,
-  } = useGetServiciosQuery(null);
-  const servicio = {
-    data: servicio_data,
-    isError: servicio_isError,
-    error: servicio_error,
-    isLoading: servicio_isLoading,
-    isFetching: servicio_isFetching,
-    refecth: servicio_refetch,
+    data: unidad_data,
+    isError: unidad_isError,
+    error: unidad_error,
+    isLoading: unidad_isLoading,
+    isFetching: unidad_isFetching,
+    refetch: unidad_refetch,
+  } = useGetUnidadesQuery(null);
+  const unidad = {
+    data: unidad_data,
+    isError: unidad_isError,
+    error: unidad_error,
+    isLoading: unidad_isLoading,
+    isFetching: unidad_isFetching,
+    refecth: unidad_refetch,
   };
 
   const columns: GridColDef[] = [
     {
-      field: "id_servicio",
-      headerName: "Servicio ID",
-      width: 100,
+      field: "id_unidadTransporte",
+      headerName: "Unidad ID",
+      width: 200,
       editable: false,
     },
     {
-      field: "id_itinerario",
-      headerName: "Itinerario ID",
-      type: "number",
+      field: "tipo_unidad",
+      headerName: "Tipo",
+      type: "string",
       align: "left",
       headerAlign: "left",
-      width: 100,
+      width: 200,
       editable: true,
     },
     {
-      field: "id_unidadTransporte",
-      headerName: "Unidad ID",
-      type: "number",
+      field: "categoria",
+      headerName: "Categoría",
+      width: 200,
       align: "left",
       headerAlign: "left",
-      width: 100,
+      type: "singleSelect",
+      valueOptions: ["Cochecama", "Semicama", "Comun"],
       editable: true,
     },
     {
-      field: "costo_predeterminado",
-      headerName: "Costo Predeterminado",
-      type: "number",
-      width: 180,
-      align: "left",
-      headerAlign: "left",
-      editable: true,
-    },
-    {
-      field: "disponibilidad",
-      headerName: "Disponibilidad",
+      field: "asientos",
+      headerName: "Asientos",
       align: "left",
       headerAlign: "left",
       width: 220,
@@ -344,18 +329,17 @@ export default function ServicioTable() {
   ];
 
   React.useEffect(() => {
-    if (Array.isArray(servicio.data)) {
-      const updatedRows = servicio.data.map((dataItem) => ({
+    if (Array.isArray(unidad.data)) {
+      const updatedRows = unidad.data.map((dataItem) => ({
         id: randomId(),
-        id_servicio: dataItem.id_servicio,
-        id_itinerario: dataItem.id_itinerario,
         id_unidadTransporte: dataItem.id_unidadTransporte,
-        costo_predeterminado: dataItem.costo_predeterminado,
-        disponibilidad: dataItem.disponibilidad,
+        tipo_unidad: dataItem.tipo_unidad,
+        categoria: dataItem.categoria,
+        asientos: dataItem.asientos,
       }));
       setRows(updatedRows);
     }
-  }, [servicio.data]);
+  }, [unidad.data]);
 
   return (
     <Box

@@ -22,13 +22,28 @@ export const unidadApi = createApi({
     getUnidadById: builder.query<TUnidad, { id: string }>({
       query: ({ id }) => `${unidadesEP.getById}${id}`,
     }),
-    createComment: builder.mutation({
-      query: (newUnidad: TUnidad) => ({
+    updateUnidad: builder.mutation<
+      TUnidad,
+      { id_unidadTransporte: number; data: Partial<TUnidad> }
+    >({
+      query: ({ id_unidadTransporte, data }) => ({
+        url: `${unidadesEP.update}${id_unidadTransporte}`,
+        method: "PUT",
+        body: data,
+      }),
+    }),
+    deleteUnidad: builder.mutation<void, { id_unidadTransporte: number }>({
+      query: ({ id_unidadTransporte }) => ({
+        url: `${unidadesEP.delete}${id_unidadTransporte}`,
+        method: "DELETE",
+      }),
+    }),
+    createUnidad: builder.mutation<TUnidad, { data: Partial<TUnidad> }>({
+      query: ({ data }) => ({
         url: unidadesEP.post,
         method: "POST",
-        body: newUnidad,
+        body: data,
       }),
-      invalidatesTags: ["Unidades"],
     }),
   }),
 });
@@ -36,5 +51,7 @@ export const unidadApi = createApi({
 export const {
   useGetUnidadesQuery,
   useGetUnidadByIdQuery,
-  useCreateCommentMutation,
+  useCreateUnidadMutation,
+  useUpdateUnidadMutation,
+  useDeleteUnidadMutation,
 } = unidadApi;
