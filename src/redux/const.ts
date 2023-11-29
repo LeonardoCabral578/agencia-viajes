@@ -10,6 +10,8 @@ export const usuariosEP = {
 export const serviciosEP = {
   getall: "Servicio",
   getById: "Servicio/",
+  update: "Servicio/",
+  delete: "Servicio/",
   post: "Servicio",
 };
 

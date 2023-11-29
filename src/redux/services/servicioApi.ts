@@ -38,7 +38,36 @@ export const servicioApi = createApi({
     getServicioById: builder.query<TServicio, { id_servicio: string }>({
       query: ({ id_servicio }) => `${serviciosEP.getById}${id_servicio}`,
     }),
+    updateServicio: builder.mutation<
+      TServicio,
+      { id_servicio: number; data: Partial<TServicio> }
+    >({
+      query: ({ id_servicio, data }) => ({
+        url: `${serviciosEP.update}${id_servicio}`,
+        method: "PUT",
+        body: data,
+      }),
+    }),
+    deleteServicio: builder.mutation<void, { id_servicio: number }>({
+      query: ({ id_servicio }) => ({
+        url: `${serviciosEP.delete}${id_servicio}`,
+        method: "DELETE",
+      }),
+    }),
+    createServicio: builder.mutation<TServicio, { data: Partial<TServicio> }>({
+      query: ({ data }) => ({
+        url: serviciosEP.post,
+        method: "POST",
+        body: data,
+      }),
+    }),
   }),
 });
 
-export const { useGetServiciosQuery, useGetServicioByIdQuery } = servicioApi;
+export const {
+  useGetServiciosQuery,
+  useGetServicioByIdQuery,
+  useUpdateServicioMutation,
+  useDeleteServicioMutation,
+  useCreateServicioMutation,
+} = servicioApi;
