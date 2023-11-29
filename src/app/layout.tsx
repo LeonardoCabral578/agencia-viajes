@@ -21,8 +21,8 @@ import ResponsiveAppBar from "./Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Inicio | EDUCAR",
-  description: "Página principal de EDUCAR",
+  title: "Inicio | ViajePlus",
+  description: "Página principal de ViajePlus",
 };
 
 export const API_URL = process.env.API_URL_SERVER;

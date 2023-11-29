@@ -6,31 +6,12 @@ module.exports = {
   important: true,
   theme: {
     screens: {
-      only_mobile: { max: "768px" },
-      mobile: "768px",
-
-      only_tablet: { min: "769px", max: "1023px" },
-      tablet: "769px",
-
-      only_desktop: { min: "1024px", max: "1215px" },
-      desktop: "1024px",
-
-      only_widescreen: { min: "1216px", max: "1407px" },
-      widescreen: "1216px",
-
-      fullhd: { min: "1408px" },
-    },
-    container: {
-      padding: {
-        DEFAULT: "1rem",
-      },
-      screens: {
-        DEFAULT: "100%",
-        sm: "100%",
-        lg: "960px",
-        xl: "960px",
-        "2xl": "1280px",
-      },
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      xxl: "1920px",
     },
     colors: {
       transparent: "transparent",
@@ -50,44 +31,23 @@ module.exports = {
       // custom colors
       main: {
         // ---------- MAIN COLORS ----------
-        background: "#f2f5f9",
-        primary: {
-          50: "#E5F4FF",
-          100: "#C7E8FF",
-          200: "#8FD0FF",
-          300: "#5CBBFF",
-          400: "#24A4FF",
-          500: "#0089EB",
-          600: "#0069B4",
-          700: "#004D85",
-          800: "#00365C",
-          900: "#001B2E",
-          950: "#000C14",
-        },
-        bgAction: "#F5F9FF",
-        text: {
-          primary: "#3D3D3F",
-          secondary: "#9A9A9E",
-        },
+        pri1: "#231f20",
+        pri2: "#3d3b3c",
+        pri3: "#524e50",
+
+        sec1: "#E3DFFC",
+        // sec2: "#f6f5fa",
+        sec2: "white",
+
+        // ---------- OTHER COLORS ----------
+        blue: "#2874f0",
+        lightGreen: "#14be47",
+        green: "#388e3c",
+        yellow: "#ff9f00",
+        orange: "#fb641b",
+        darkBlue: "#172337",
+        grey: "#878787",
       },
-    },
-    boxShadow: {
-      base: "0px 1px 2px 0px rgba(64, 67, 91, 0.06), 0px 1px 3px 0px rgba(64, 67, 91, 0.25)",
-      lg: "0px 4px 6px -2px rgba(64, 67, 91, 0.05), 0px 10px 15px -3px rgba(64, 67, 91, 0.10)",
-      mg: "0px 2px 4px -1px rgba(64, 67, 91, 0.06), 0px 4px 6px -1px rgba(64, 67, 91, 0.10)",
-    },
-    dropShadow: {
-      sm: "0px 1px 2px 0px rgba(64, 67, 91, 0.06), 0px 1px 3px 0px rgba(64, 67, 91, 0.25)",
-      top: "0px -1px 6px #c5c5c9",
-      DEFAULT: [
-        "0 1px 2px rgba(0, 0, 0, 0.1)",
-        "0 1px 1px rgba(0, 0, 0, 0.06)",
-      ],
-      md: ["0 4px 3px rgba(0, 0, 0, 0.07)", "0 2px 2px rgba(0, 0, 0, 0.06)"],
-      lg: ["0 10px 8px rgba(0, 0, 0, 0.04)", "0 4px 3px rgba(0, 0, 0, 0.1)"],
-      xl: ["0 20px 13px rgba(0, 0, 0, 0.03)", "0 8px 5px rgba(0, 0, 0, 0.08)"],
-      "2xl": "0 25px 25px rgba(0, 0, 0, 0.15)",
-      none: "0 0 #0000",
     },
     spacing: {
       px: "1px",
@@ -222,6 +182,17 @@ module.exports = {
       4: "4px",
       8: "8px",
     },
+    boxShadow: {
+      sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      DEFAULT:
+        "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+      md: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+      inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
+      none: "none",
+    },
     caretColor: (theme) => theme("colors"),
     contrast: {
       0: "0",
@@ -232,6 +203,7 @@ module.exports = {
       150: "1.5",
       200: "2",
     },
+    container: {},
     content: {
       none: "none",
     },
@@ -248,6 +220,18 @@ module.exports = {
     divideColor: (theme) => theme("borderColor"),
     divideOpacity: (theme) => theme("borderOpacity"),
     divideWidth: (theme) => theme("borderWidth"),
+    dropShadow: {
+      sm: "0 1px 1px rgba(0,0,0,0.05)",
+      DEFAULT: [
+        "0 1px 2px rgba(0, 0, 0, 0.1)",
+        "0 1px 1px rgba(0, 0, 0, 0.06)",
+      ],
+      md: ["0 4px 3px rgba(0, 0, 0, 0.07)", "0 2px 2px rgba(0, 0, 0, 0.06)"],
+      lg: ["0 10px 8px rgba(0, 0, 0, 0.04)", "0 4px 3px rgba(0, 0, 0, 0.1)"],
+      xl: ["0 20px 13px rgba(0, 0, 0, 0.03)", "0 8px 5px rgba(0, 0, 0, 0.08)"],
+      "2xl": "0 25px 25px rgba(0, 0, 0, 0.15)",
+      none: "0 0 #0000",
+    },
     fill: { current: "currentColor" },
     grayscale: {
       0: "0",
@@ -285,7 +269,22 @@ module.exports = {
       DEFAULT: "1",
     },
     fontFamily: {
-      noto: ['"Noto Sans"'],
+      sans: [
+        "ui-sans-serif",
+        "system-ui",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        '"Segoe UI"',
+        "Roboto",
+        '"Helvetica Neue"',
+        "Arial",
+        '"Noto Sans"',
+        "sans-serif",
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+      ],
       serif: [
         "ui-serif",
         "Georgia",
@@ -306,7 +305,7 @@ module.exports = {
       ],
     },
     fontSize: {
-      xxs: ["10px", { lineHeight: "1rem" }],
+      xxs: ["11px", { lineHeight: "1rem" }],
       xs: ["0.75rem", { lineHeight: "1rem" }],
       sm: ["0.875rem", { lineHeight: "1.25rem" }],
       base: ["1rem", { lineHeight: "1.5rem" }],
@@ -841,11 +840,6 @@ module.exports = {
       30: "30",
       40: "40",
       50: "50",
-      60: "60",
-      70: "70",
-      80: "80",
-      90: "90",
-      100: "100",
     },
   },
   plugins: [],

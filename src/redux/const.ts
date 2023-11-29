@@ -7,16 +7,16 @@ export const usuariosEP = {
   post: "Usuarios",
 };
 
-export const noticiasEP = {
-  getall: "Noticias",
-  getById: "Noticias/ObtenerNoticiasPorId/",
-  post: "Noticias",
+export const serviciosEP = {
+  getall: "Servicio",
+  getById: "Servicio/",
+  post: "Servicio",
 };
 
-export const comentariosEP = {
-  getall: "Comentarios",
-  getById: "Comentarios/ObtenerComentariosPorId/",
-  post: "Comentarios/AgregarComentario",
+export const unidadesEP = {
+  getall: "UnidadTransporte",
+  getById: "UnidadTransporte/",
+  post: "UnidadTransporte/",
 };
 
 export const inscripcionEP = {

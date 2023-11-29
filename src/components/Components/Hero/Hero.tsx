@@ -12,7 +12,7 @@ export const Hero = ({ img, title, sub_title }: IHero) => {
   return (
     <>
       {img ? (
-        <div className="hero is-relative">
+        <div className="hero relative">
           <Image
             src={img}
             alt="Banner"
@@ -20,11 +20,11 @@ export const Hero = ({ img, title, sub_title }: IHero) => {
             width={1920}
             height={1080}
           />
-          <div className="hero__texts is-absolute is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
-            <h1 className="title is-1 has-text-centered has-text-white">
+          <div className="hero__texts absolute flex flex-col items-center justify-center">
+            <h1 className="title text-5xl mb-3 text-center text-white">
               {title}
             </h1>
-            <h6 className="title is-6 has-text-centered has-text-white">
+            <h6 className="title text-base text-center text-white">
               {sub_title}
             </h6>
           </div>
