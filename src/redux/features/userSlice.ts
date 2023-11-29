@@ -8,7 +8,7 @@ export type TUserState = {
 
 let savedUserLogged = {
   userSelected: {
-    dni: "0",
+    id_dni: "0",
     nombreCompleto: "",
     correo: "",
     fechaNacimiento: "",
@@ -40,7 +40,7 @@ export const userSlice = createSlice({
     logIn: (state, action: PayloadAction<TUserApi>) => {
       state.userSelected = {
         correo: action.payload.correo,
-        dni: action.payload.dni,
+        id_dni: action.payload.id_dni,
         fechaNacimiento: action.payload.fechaNacimiento,
         direccion: action.payload.direccion,
         nombreCompleto: action.payload.nombreCompleto,
@@ -48,21 +48,6 @@ export const userSlice = createSlice({
         telefono: action.payload.telefono,
       };
       state.isAuthenticated = true;
-      localStorage.setItem(
-        "userLogged",
-        JSON.stringify({
-          userSelected: {
-            correo: action.payload.correo,
-            dni: action.payload.dni,
-            fechaNacimiento: action.payload.fechaNacimiento,
-            nombreCompleto: action.payload.nombreCompleto,
-            RolesUsuarios: { tipo_rol: action.payload.rolesUsuarios.tipo_rol },
-            telefono: action.payload.telefono,
-            loginDate: new Date().toISOString(),
-          },
-          isAuthenticated: true,
-        })
-      );
     },
     logOut: (state) => {
       state.userSelected = initialState.userSelected;

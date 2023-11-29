@@ -36,9 +36,11 @@ export default function Reserva({ params }: { params: { id: string } }) {
   const router = useRouter();
   const user = useAppSelector((state) => state.userReducer);
 
-  if (!user.isAuthenticated) {
-    router.push("/ingreso");
-  }
+  useEffect(() => {
+    if (!user.isAuthenticated) {
+      router.push("/ingreso");
+    }
+  }, [user]);
 
   const [puntoSelected, setPuntoSelected] = useState<null | TPuntoIntermedio>(
     null
@@ -114,7 +116,7 @@ export default function Reserva({ params }: { params: { id: string } }) {
   const addMutation = async () => {
     await addNewModel({
       data: {
-        dni_usuario: user.userSelected.dni,
+        dni_usuario: user.userSelected.id_dni,
         id_servicio: Number(params.id),
         id_puntoIntermedio: puntoSelected?.id_puntoIntermedio,
         tipo_atencion: tipoAtencion,

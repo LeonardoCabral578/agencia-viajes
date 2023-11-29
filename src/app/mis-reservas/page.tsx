@@ -65,7 +65,9 @@ export default function Servicios() {
           <SimpleLoader data={servicioUsuario}>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 p-8 mb-40 w-full">
               {servicioUsuario.data
-                ?.filter((value) => (value.dni_usuario = user.userSelected.dni))
+                ?.filter(
+                  (value) => (value.dni_usuario = user.userSelected.id_dni)
+                )
                 .map((servUsu) => {
                   const puntoIntermedio = puntoIntermedio_data?.find(
                     (value) =>

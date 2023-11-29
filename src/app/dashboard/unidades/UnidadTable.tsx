@@ -59,7 +59,7 @@ function EditToolbar(props: EditToolbarProps) {
   return (
     <GridToolbarContainer>
       <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
-        Agregar registro
+        Agregar Unidad
       </Button>
     </GridToolbarContainer>
   );

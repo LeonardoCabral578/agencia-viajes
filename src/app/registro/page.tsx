@@ -95,7 +95,7 @@ export default function Register() {
 
   const registerUser = () => {
     const newUser = {
-      dni: dniInput,
+      id_dni: dniInput,
       nombreCompleto: nameInput,
       correo: emailInput,
       fechaNacimiento: birthDate.format("L"),

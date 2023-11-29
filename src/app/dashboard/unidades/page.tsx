@@ -5,7 +5,7 @@ import UnidadTable from "./UnidadTable";
 
 export default function Servicios() {
   return (
-    <Dashboard activeTab={"Servicios"}>
+    <Dashboard activeTab={"Unidades"}>
       <UnidadTable />
     </Dashboard>
   );

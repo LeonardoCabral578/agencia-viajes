@@ -3,7 +3,7 @@ import { API_URL, usuariosEP } from "../const";
 
 export type TUserApi = {
   id?: number;
-  dni: string;
+  id_dni: string;
   nombreCompleto: string;
   correo: string;
   fechaNacimiento: string;
