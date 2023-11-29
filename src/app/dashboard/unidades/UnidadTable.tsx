@@ -217,7 +217,7 @@ export default function UnidadTable() {
 
     updateMutation(newRow);
     addMutation(newRow);
-    unidad_refetch();
+    // unidad_refetch();
 
     return updatedRow;
   };

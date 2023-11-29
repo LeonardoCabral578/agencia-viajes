@@ -178,7 +178,7 @@ export default function ServicioTable() {
 
   const [addNewModel] = useCreateServicioMutation();
   const addMutation = async (newRow: GridRowModel) => {
-    if (!newRow.id_itinerario) {
+    if (!newRow.id_servicio) {
       await addNewModel({
         data: {
           id_itinerario: newRow.id_itinerario,
@@ -224,7 +224,7 @@ export default function ServicioTable() {
 
     updateMutation(newRow);
     addMutation(newRow);
-    servicio_refetch();
+    // servicio_refetch();
 
     return updatedRow;
   };
