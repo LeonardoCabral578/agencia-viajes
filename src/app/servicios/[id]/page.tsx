@@ -152,23 +152,21 @@ export default function Reserva({ params }: { params: { id: string } }) {
       });
   };
 
-  if (itinerario.data) {
-    const itinerarioSel = itinerario.data.find(
-      (value) => value.id_itinerario == servicio_data?.id_itinerario
-    );
+  // if (itinerario.data) {
+  //   const itinerarioSel = itinerario.data.find(
+  //     (value) => value.id_itinerario == servicio_data?.id_itinerario
+  //   );
 
-    itinerarioSel && setItinerarioSelected(itinerarioSel);
-  }
+  //   itinerarioSel && setItinerarioSelected(itinerarioSel);
+  // }
 
-  useEffect(() => {
-    if (itinerario.data) {
-      const itinerarioSel = itinerario.data.find(
-        (value) => value.id_itinerario == servicio_data?.id_itinerario
-      );
+  // if (itinerario.data && servicio_data?.id_itinerario) {
+  //   const itinerarioSel = itinerario.data.find(
+  //     (value) => value.id_itinerario == servicio_data.id_itinerario
+  //   );
 
-      itinerarioSel && setItinerarioSelected(itinerarioSel);
-    }
-  }, []);
+  //   itinerarioSel && setItinerarioSelected(itinerarioSel);
+  // }
 
   const handleChange = (event: SelectChangeEvent) => {
     setTipoAtencion(event.target.value);
@@ -228,15 +226,49 @@ export default function Reserva({ params }: { params: { id: string } }) {
                 <div className="rounded-xl bg-white p-8 flex flex-col gap-4">
                   <p>
                     <b>Ciudad Origen y Fecha de salida:</b>{" "}
-                    {itinerarioSelected?.ciudad_origen} |{" "}
-                    {itinerarioSelected?.fecha_partida} -{" "}
-                    {itinerarioSelected?.hora_partida}
+                    {
+                      itinerario_data?.find(
+                        (value) =>
+                          value.id_itinerario == servicio_data?.id_itinerario
+                      )?.ciudad_origen
+                    }{" "}
+                    |{" "}
+                    {
+                      itinerario_data?.find(
+                        (value) =>
+                          value.id_itinerario == servicio_data?.id_itinerario
+                      )?.fecha_partida
+                    }{" "}
+                    -{" "}
+                    {
+                      itinerario_data?.find(
+                        (value) =>
+                          value.id_itinerario == servicio_data?.id_itinerario
+                      )?.hora_partida
+                    }
                   </p>
                   <p>
                     <b>Ciudad Destino y Fecha de llegada:</b>{" "}
-                    {itinerarioSelected?.ciudad_destino} |{" "}
-                    {itinerarioSelected?.fecha_llegada} -{" "}
-                    {itinerarioSelected?.hora_llegada}
+                    {
+                      itinerario_data?.find(
+                        (value) =>
+                          value.id_itinerario == servicio_data?.id_itinerario
+                      )?.ciudad_destino
+                    }{" "}
+                    |{" "}
+                    {
+                      itinerario_data?.find(
+                        (value) =>
+                          value.id_itinerario == servicio_data?.id_itinerario
+                      )?.fecha_llegada
+                    }{" "}
+                    -{" "}
+                    {
+                      itinerario_data?.find(
+                        (value) =>
+                          value.id_itinerario == servicio_data?.id_itinerario
+                      )?.hora_llegada
+                    }
                   </p>
                   <p>
                     <b>Disponibilidad restante:</b>{" "}

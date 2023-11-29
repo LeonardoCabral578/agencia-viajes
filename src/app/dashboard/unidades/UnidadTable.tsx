@@ -109,7 +109,7 @@ export default function UnidadTable() {
   const [updateModel] = useUpdateUnidadMutation();
   const updateMutation = async (newRow: GridRowModel) => {
     await updateModel({
-      id_unidadTransporte: Number(newRow.id_unidad),
+      id_unidadTransporte: Number(newRow.id_unidadTransporte),
       data: {
         tipo_unidad: newRow.tipo_unidad,
         categoria: newRow.categoria,
@@ -177,33 +177,35 @@ export default function UnidadTable() {
 
   const [addNewModel] = useCreateUnidadMutation();
   const addMutation = async (newRow: GridRowModel) => {
-    await addNewModel({ data: newRow })
-      .unwrap()
-      .then((payload) => {
-        toast.success("Registro agregado exitosamente", {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
+    if (!newRow.id_unidadTransporte) {
+      await addNewModel({ data: newRow })
+        .unwrap()
+        .then((payload) => {
+          toast.success("Registro agregado exitosamente", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        })
+        .catch((error: any) => {
+          console.log(error);
+          // toast.error(error.error, {
+          //   position: "top-center",
+          //   autoClose: 3000,
+          //   hideProgressBar: true,
+          //   closeOnClick: true,
+          //   pauseOnHover: true,
+          //   draggable: true,
+          //   progress: undefined,
+          //   theme: "colored",
+          // });
         });
-      })
-      .catch((error: any) => {
-        console.log(error);
-        // toast.error(error.error, {
-        //   position: "top-center",
-        //   autoClose: 3000,
-        //   hideProgressBar: true,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   theme: "colored",
-        // });
-      });
+    }
   };
 
   const processRowUpdate = (newRow: GridRowModel) => {

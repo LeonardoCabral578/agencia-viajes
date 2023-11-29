@@ -178,39 +178,41 @@ export default function ServicioTable() {
 
   const [addNewModel] = useCreateServicioMutation();
   const addMutation = async (newRow: GridRowModel) => {
-    await addNewModel({
-      data: {
-        id_itinerario: newRow.id_itinerario,
-        id_unidadTransporte: newRow.id_unidadTransporte,
-        costo_predeterminado: newRow.costo_predeterminado,
-      },
-    })
-      .unwrap()
-      .then((payload) => {
-        toast.success("Registro agregado exitosamente", {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
+    if (!newRow.id_itinerario) {
+      await addNewModel({
+        data: {
+          id_itinerario: newRow.id_itinerario,
+          id_unidadTransporte: newRow.id_unidadTransporte,
+          costo_predeterminado: newRow.costo_predeterminado,
+        },
       })
-      .catch((error: any) => {
-        console.log(error);
-        // toast.error(error.error, {
-        //   position: "top-center",
-        //   autoClose: 3000,
-        //   hideProgressBar: true,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   theme: "colored",
-        // });
-      });
+        .unwrap()
+        .then((payload) => {
+          toast.success("Registro agregado exitosamente", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        })
+        .catch((error: any) => {
+          console.log(error);
+          // toast.error(error.error, {
+          //   position: "top-center",
+          //   autoClose: 3000,
+          //   hideProgressBar: true,
+          //   closeOnClick: true,
+          //   pauseOnHover: true,
+          //   draggable: true,
+          //   progress: undefined,
+          //   theme: "colored",
+          // });
+        });
+    }
   };
 
   const processRowUpdate = (newRow: GridRowModel) => {

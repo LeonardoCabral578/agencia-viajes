@@ -57,45 +57,41 @@ export default function Servicios() {
     <>
       <Hero
         img={viaje}
-        title="Nuestros servicios"
-        sub_title="Los mejores viajes de todo el país"
+        title="Reservas"
+        sub_title="Listado de viajes pendientes"
       />
       {user.isAuthenticated && user.userSelected && (
         <div className="">
           <SimpleLoader data={servicioUsuario}>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 p-8 mb-40 w-full">
-              {servicioUsuario.data
-                ?.filter(
-                  (value) => (value.dni_usuario = user.userSelected.id_dni)
-                )
-                .map((servUsu) => {
-                  const puntoIntermedio = puntoIntermedio_data?.find(
-                    (value) =>
-                      value.id_puntoIntermedio == servUsu.id_puntoIntermedio
-                  );
-                  return (
-                    <CardService
-                      key={generateRandomKey()}
-                      topTitle={`Estado: ${
-                        servUsu.venta ? "Pagado" : "Reservado"
-                      }`}
-                      subTitle={`Costo total: ${servUsu.costo_final}`}
-                      title={
-                        puntoIntermedio?.nombre_ciudad
-                          ? puntoIntermedio?.nombre_ciudad
-                          : ""
-                      }
-                      desc={
-                        servUsu.tipo_atencion !== null
-                          ? `Tipo de atención: ${servUsu.tipo_atencion}`
-                          : "No hay cupos disponibles"
-                      }
-                      onClick={() => {
-                        console.log("Click en reserva");
-                      }}
-                    />
-                  );
-                })}
+              {servicioUsuario_data?.map((servUsu) => {
+                const puntoIntermedio = puntoIntermedio_data?.find(
+                  (value) =>
+                    value.id_puntoIntermedio == servUsu.id_puntoIntermedio
+                );
+                return (
+                  <CardService
+                    key={generateRandomKey()}
+                    topTitle={`Estado: ${
+                      servUsu.venta ? "Pagado" : "Reservado"
+                    }`}
+                    subTitle={`Costo total: ${servUsu.costo_final}`}
+                    title={
+                      puntoIntermedio?.nombre_ciudad
+                        ? puntoIntermedio?.nombre_ciudad
+                        : ""
+                    }
+                    desc={
+                      servUsu.tipo_atencion !== null
+                        ? `Tipo de atención: ${servUsu.tipo_atencion}`
+                        : "No hay cupos disponibles"
+                    }
+                    onClick={() => {
+                      console.log("Click en reserva");
+                    }}
+                  />
+                );
+              })}
             </div>
           </SimpleLoader>
         </div>
